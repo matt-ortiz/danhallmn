@@ -2,20 +2,26 @@
 layout: page
 title: The Truth Report
 eyebrow: Weekly Email
-lead: Plain reporting and biblical perspective on what matters right now.
+lead: Faith and politics, in plain terms, every week.
 permalink: /truth-report/
-description: Subscribe to The Truth Report — a weekly word for the Christian, conservative, biblically-grounded community.
+description: Subscribe to The Truth Report — Dan Hall's weekly email on politics and religion, state prayer requests, and events across Minnesota.
 ---
 
-*[Placeholder — Dan's description of what The Truth Report is and why people
-should subscribe.]*
+The Truth Report is Dan's weekly email, written from where he sits: a retired
+Minnesota Senator now serving as a chaplain to the state's leaders.
 
-Each issue works through what is happening in our state and our nation and
-holds it up against Scripture, without hedging and without partisan spin.
+Each issue carries articles on politics and religion, prayer requests for the
+state, and updates on events happening throughout Minnesota. It reaches **10,000
+people of faith** — pastors, ministers, and intercessors — who want the two
+subjects handled together rather than kept carefully apart.
 
-{% include signup-form.html list="truth-report" label="The Truth Report" %}
+{% include signup-form.html list="truth-report" label="The Truth Report" url=site.truth_report_signup %}
 
-## Recent issues
+## What you'll get
 
-*[Placeholder — featured or recent report preview: title, brief excerpt, date.
-Link to archive or back issues once available.]*
+- **Articles on politics and religion** — what happened, and what Scripture says about it
+- **State prayer requests** — specific, current, and named
+- **Event updates** — gatherings and opportunities across Minnesota
+
+*[Placeholder — a featured or recent issue could go here, with a link to back
+issues if an archive is available.]*

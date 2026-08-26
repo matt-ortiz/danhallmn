@@ -2,12 +2,31 @@
 layout: page
 title: Contact
 eyebrow: Get in Touch
-lead: We would be glad to hear from you.
+lead: Dan would be glad to hear from you.
 permalink: /contact/
-description: Contact Dan Hall's ministry.
+description: Contact Dan Hall — by phone, on Facebook, or by mail.
 ---
 
-For questions, speaking requests, or prayer needs, email
-**[{{ site.contact_email }}](mailto:{{ site.contact_email }})**.
+## By phone
 
-*[Placeholder — mailing address, phone, or social links if Dan wants them here.]*
+Dan can be reached directly at
+**[{{ site.contact_phone }}](tel:{{ site.contact_phone_link }})**.
+
+## On Facebook
+
+Follow the ministry at
+**[facebook.com/DanHallMinistry]({{ site.facebook_url }})**.
+
+## By mail
+
+For donations and correspondence:
+
+> {{ site.mail_to }}
+> {{ site.mail_address_1 }}
+> {{ site.mail_address_2 }}
+
+{% if site.contact_email != "" %}
+## By email
+
+**[{{ site.contact_email }}](mailto:{{ site.contact_email }})**
+{% endif %}

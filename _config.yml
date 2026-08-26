@@ -4,10 +4,11 @@
 # ---------------------------------------------------------------------------
 
 title: Dan Hall
-tagline: Ministry · Minnesota
+tagline: Minister · Chaplain · Minnesota
 description: >-
-  Truth for the church, resources for pastors, and prayer for our state,
-  our nation, and the world.
+  Evangelical minister, former Minnesota Senator, and political chaplain —
+  serving Minnesota's leaders through prayer, biblical truth, and the defense
+  of religious freedom.
 url: "https://danhallmn.com"
 baseurl: ""
 lang: en
@@ -19,7 +20,21 @@ lang: en
 prelaunch: true
 
 # --- Values used across the site (edit here, not in the HTML) --------------
-contact_email: "CONTACT@EXAMPLE.COM"
+# Dan has no published ministry email yet — templates fall back to phone and
+# Facebook while this is blank. Fill it in and the mailto links reappear.
+contact_email: ""
+contact_phone: "612-790-2000"
+contact_phone_link: "+16127902000"
+facebook_url: "https://www.facebook.com/DanHallMinistry"
+
+# Mail-in donations go to Dan's sponsoring organization, not a home address.
+mail_to: "IMF Donation - Dan Hall"
+mail_address_1: "PO Box 98"
+mail_address_2: "Minnetonka Beach, MN 55361"
+
+# Hosted Constant Contact signup page for The Truth Report. Not embeddable —
+# see README. Replace with an inline embed code when Dan generates one.
+truth_report_signup: "https://lp.constantcontactpages.com/su/E9BueQF/HallsTruthReport"
 kindful_url: "https://internationalministerialfellowship-bloom.kindful.com/?campaign=1419518"
 kindful_org: "International Ministerial Fellowship"
 

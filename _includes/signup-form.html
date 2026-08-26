@@ -1,14 +1,31 @@
 {%- comment -%}
-  Constant Contact signup slot.
-  Usage: {% include signup-form.html list="truth-report" label="The Truth Report" %}
+  Signup slot for one of the three lists.
 
-  When Dan sends the embed code for a list, paste it into
-  _includes/cc-<list>.html and set  forms_ready: true  in _config.yml.
-  Until then this renders a labelled placeholder so the page never looks broken.
+  Usage:
+    {% include signup-form.html list="pastors" label="For Pastors" %}
+    {% include signup-form.html list="truth-report" label="The Truth Report" url=site.truth_report_signup %}
+
+  Three states, best to worst:
+   1. site.forms_ready is true  -> renders the real inline Constant Contact
+      embed from _includes/cc-<list>.html
+   2. a `url` was passed        -> button out to the hosted Constant Contact
+      signup page (opens in a new tab)
+   3. neither                   -> labelled placeholder, so the page still
+      reads as finished rather than broken
 {%- endcomment -%}
 {%- assign embed_file = 'cc-' | append: include.list | append: '.html' -%}
+
 {% if site.forms_ready %}
   {% include {{ embed_file }} %}
+{% elsif include.url %}
+  <div class="signup-cta">
+    <a class="btn btn--gold" href="{{ include.url }}" target="_blank" rel="noopener">
+      Sign up for {{ include.label }}
+    </a>
+    <p class="signup-cta__note">
+      Opens Dan's secure signup page, hosted by Constant Contact.
+    </p>
+  </div>
 {% else %}
   <div class="form-slot">
     <strong>Signup form goes here</strong>

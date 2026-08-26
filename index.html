@@ -7,8 +7,8 @@ sitemap: false
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dan Hall — Ministry | DanHallMN.com</title>
-<meta name="description" content="The ministry of Dan Hall. The Truth Report, resources for pastors, and state intercessory prayer. Full site coming soon.">
+<title>Dan Hall — Minister, Chaplain, Minnesota | DanHallMN.com</title>
+<meta name="description" content="Dan Hall — evangelical minister, former Minnesota Senator, and political chaplain. The Truth Report, resources for pastors, and state intercessory prayer.">
 <link rel="canonical" href="https://danhallmn.com/">
 
 <!-- Social sharing -->
@@ -29,17 +29,18 @@ sitemap: false
 
   <main class="soon__main">
     <div class="wrap">
-      <p class="soon__tag">Ministry &middot; Minnesota</p>
+      <p class="soon__tag">To Increase Him In Us</p>
       <h1>Dan Hall</h1>
       <hr class="rule">
       <p class="soon__lead">
-        A new home for The Truth Report, resources for pastors, and the call to
-        intercessory prayer for our state and nation. The full site is being
+        Evangelical minister, former Minnesota Senator, and political chaplain to
+        Minnesota's leaders. A new home for The Truth Report, resources for
+        pastors, and the call to intercessory prayer. The full site is being
         built now.
       </p>
 
       <ul class="soon__list">
-        <li>The Truth Report &mdash; a weekly word for the Christian, conservative, biblically&#8209;grounded community</li>
+        <li>The Truth Report &mdash; a weekly email on faith and politics, read by 10,000 people across Minnesota</li>
         <li>For Pastors &mdash; insight and resources for those who shepherd</li>
         <li>State Intercessors &mdash; prayer focus for our state, our nation, and the world</li>
       </ul>
@@ -48,13 +49,19 @@ sitemap: false
         <a class="btn btn--gold"
            href="{{ site.kindful_url }}"
            target="_blank" rel="noopener">Support the Ministry</a>
-        <a class="btn btn--ghost-light" href="mailto:{{ site.contact_email }}">Get in Touch</a>
+        <a class="btn btn--ghost-light" href="{{ site.truth_report_signup }}" target="_blank" rel="noopener">Subscribe to The Truth Report</a>
       </div>
     </div>
   </main>
 
   <div class="soon__footer">
     <div class="wrap">
+      <p style="margin:0 0 8px">
+        Contact Dan directly at
+        <a href="tel:{{ site.contact_phone_link }}">{{ site.contact_phone }}</a>
+        &nbsp;&middot;&nbsp;
+        <a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a>
+      </p>
       &copy; {{ 'now' | date: "%Y" }} {{ site.title }} Ministry. Donations processed securely by
       <a href="{{ site.kindful_url }}"
          target="_blank" rel="noopener">{{ site.kindful_org }}</a>.

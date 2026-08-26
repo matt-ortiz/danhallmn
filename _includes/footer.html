@@ -3,7 +3,10 @@
     <div class="footer-grid">
       <div>
         <h4>{{ site.title }} Ministry</h4>
-        <p style="max-width:34ch">{{ site.description }}</p>
+        <p style="max-width:36ch">{{ site.description }}</p>
+        <p class="footer-contact">
+          <a href="tel:{{ site.contact_phone_link }}">{{ site.contact_phone }}</a>
+        </p>
       </div>
       <div>
         <h4>Pages</h4>
@@ -20,7 +23,8 @@
           <li><a href="{{ '/opinions/' | relative_url }}">Opinions</a></li>
           <li><a href="{{ '/gallery/'  | relative_url }}">Photo Gallery</a></li>
           <li><a href="{{ site.kindful_url }}" target="_blank" rel="noopener">Donate</a></li>
-          <li><a href="mailto:{{ site.contact_email }}">Contact</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          <li><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a></li>
         </ul>
       </div>
     </div>
