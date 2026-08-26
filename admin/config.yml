@@ -9,7 +9,7 @@ backend:
   branch: main
   # Cloudflare Worker that handles the "Sign in with GitHub" handshake.
   # See README → "CMS authentication" for deployment.
-  base_url: https://REPLACE-ME.workers.dev
+  base_url: https://sveltia-cms-auth.matt-b65.workers.dev
 
 media_folder: "assets/img/uploads"
 public_folder: "/assets/img/uploads"

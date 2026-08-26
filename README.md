@@ -65,8 +65,8 @@ It's Sveltia's official Worker: https://github.com/sveltia/sveltia-cms-auth
    - `GITHUB_CLIENT_ID` — from step 2
    - `GITHUB_CLIENT_SECRET` — from step 2, click **Encrypt**
    - `ALLOWED_DOMAINS` — `danhallmn.com`
-4. Put the Worker URL into `admin/config.yml` → `backend.base_url`
-   (currently `https://REPLACE-ME.workers.dev`).
+4. Worker URL is wired into `admin/config.yml` → `backend.base_url`:
+   `https://sveltia-cms-auth.matt-b65.workers.dev`
 
 ### 2. Give Dan access
 
@@ -102,7 +102,7 @@ Once the cert issues, turn on **Enforce HTTPS** in repo Settings → Pages.
 Find every placeholder:
 
 ```bash
-grep -rn "Placeholder\|REPLACE-ME\|EXAMPLE.COM" --include="*.html" --include="*.md" --include="*.yml" .
+grep -rn "Placeholder\|EXAMPLE.COM" --include="*.html" --include="*.md" --include="*.yml" .
 ```
 
 ### Constant Contact forms
