@@ -1,0 +1,53 @@
+<script>
+(function () {
+  var header = document.getElementById('site-header');
+  if (!header) return;
+
+  var toggle   = header.querySelector('.nav-toggle');
+  var groupBtn = header.querySelector('.nav__group-btn');
+  var desktop  = window.matchMedia('(min-width: 940px)');
+
+  function setMenu(open) {
+    header.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  function setGroup(open) {
+    if (groupBtn) groupBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+
+  toggle.addEventListener('click', function () {
+    setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  if (groupBtn) {
+    groupBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      setGroup(groupBtn.getAttribute('aria-expanded') !== 'true');
+    });
+  }
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Escape') return;
+    if (groupBtn && groupBtn.getAttribute('aria-expanded') === 'true') {
+      setGroup(false);
+      groupBtn.focus();
+      return;
+    }
+    if (header.classList.contains('is-open')) {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (header.contains(e.target)) return;
+    setGroup(false);
+    if (!desktop.matches) setMenu(false);
+  });
+
+  // Crossing the breakpoint mid-session must not leave a panel stuck open.
+  function sync() { setMenu(false); setGroup(false); }
+  if (desktop.addEventListener) desktop.addEventListener('change', sync);
+  else if (desktop.addListener) desktop.addListener(sync);
+})();
+</script>
