@@ -76,7 +76,8 @@ description: A ministry calling believers, pastors, and intercessors to biblical
   </div>
 </section>
 
-{% if site.posts.size > 0 %}
+{% assign latest = site.opinions | sort: 'date' | reverse %}
+{% if latest.size > 0 %}
 <section class="section section--cream">
   <div class="wrap wrap--narrow">
     <div class="section__head">
@@ -85,7 +86,7 @@ description: A ministry calling believers, pastors, and intercessors to biblical
       <h2>Thoughts on the week.</h2>
     </div>
     <div class="posts">
-      {% for post in site.posts limit: 3 %}
+      {% for post in latest limit: 3 %}
       <article class="post">
         <p class="post__meta">
           {{ post.date | date: "%B %-d, %Y" }}
@@ -94,7 +95,7 @@ description: A ministry calling believers, pastors, and intercessors to biblical
           {%- endif %}
         </p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+        <p>{{ post.description | default: post.content | strip_html | truncatewords: 30 }}</p>
         <a href="{{ post.url | relative_url }}">Read more &rarr;</a>
       </article>
       {% endfor %}

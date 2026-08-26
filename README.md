@@ -10,11 +10,15 @@ gets a real editor. Writing a post means: type a title, pick a date and a
 category, write the body, click **Publish**. Sveltia CMS commits the Markdown
 to this repo; GitHub Pages rebuilds in about a minute.
 
+Posts live in `_opinions/` as a Jekyll collection rather than `_posts`, so
+filenames carry no date prefix. That keeps URLs short (`/opinions/the-title/`)
+and makes the CMS's "View on Live Site" link resolve exactly.
+
 He can do the same for gallery photos (drag and drop) and for the standing copy
 on About, Truth Report, Pastors, Intercessors, Donate, and Contact.
 
 He never sees YAML, a filename convention, or a git commit. If the CMS ever
-breaks, the content is still plain Markdown in `_posts/` — editable through
+breaks, the content is still plain Markdown in `_opinions/` — editable through
 GitHub's web UI, or by you.
 
 ## Structure
@@ -23,7 +27,7 @@ GitHub's web UI, or by you.
 _config.yml           site-wide values + the prelaunch switch
 _layouts/             default, page, post
 _includes/            head, header, footer, preview bar, card icons, form slots
-_posts/               opinion pieces (this is what the CMS writes)
+_opinions/            opinion pieces (this is what the CMS writes)
 _data/audiences.yml   the three signup cards on the home page
 _data/gallery.yml     gallery photos (CMS-managed)
 admin/                Sveltia CMS — the editor Dan uses
@@ -42,7 +46,7 @@ donate.md, contact.md, opinions.html, gallery.html
 |---|---|
 | Home | https://danhallmn.com/preview/ |
 | Opinions | https://danhallmn.com/opinions/ |
-| A post | https://danhallmn.com/opinions/2026/08/20/sample-post-you-can-delete/ |
+| A post | https://danhallmn.com/opinions/sample-post-you-can-delete/ |
 | Gallery | https://danhallmn.com/gallery/ |
 | About | https://danhallmn.com/about/ |
 | Editor | https://danhallmn.com/admin/ |

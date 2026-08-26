@@ -16,17 +16,25 @@ description: Thoughts and insights from Dan Hall on Christian, conservative, and
 <section class="section section--paper">
   <div class="wrap wrap--narrow">
 
-    {% if site.categories.size > 0 %}
+    {%- comment -%}
+      GitHub Pages runs Jekyll 3.10, which has no collection sort_by, so sort
+      here. site.categories only covers _posts, so derive the category list
+      from the collection itself.
+    {%- endcomment -%}
+    {% assign opinions = site.opinions | sort: 'date' | reverse %}
+    {% assign cats = opinions | map: 'categories' | join: ',' | split: ',' | uniq | sort %}
+
+    {% if cats.size > 0 %}
     <div class="filterbar" role="group" aria-label="Filter by category">
       <button class="chip chip--on" data-cat="all" type="button">All</button>
-      {% for cat in site.categories %}
-        <button class="chip" data-cat="{{ cat[0] | slugify }}" type="button">{{ cat[0] }}</button>
+      {% for cat in cats %}
+        <button class="chip" data-cat="{{ cat | slugify }}" type="button">{{ cat }}</button>
       {% endfor %}
     </div>
     {% endif %}
 
     <div class="posts" id="post-list">
-      {% for post in site.posts %}
+      {% for post in opinions %}
       <article class="post"
                data-cats="{% for c in post.categories %}{{ c | slugify }} {% endfor %}">
         <p class="post__meta">
@@ -36,7 +44,7 @@ description: Thoughts and insights from Dan Hall on Christian, conservative, and
           {%- endif %}
         </p>
         <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncatewords: 34 }}</p>
+        <p>{{ post.description | default: post.content | strip_html | truncatewords: 34 }}</p>
         <a href="{{ post.url | relative_url }}">Read more &rarr;</a>
       </article>
       {% else %}

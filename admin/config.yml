@@ -27,10 +27,12 @@ collections:
     description: >-
       Write a new opinion piece. Click Publish when you're ready — it appears on
       the site about a minute later.
-    folder: _posts
+    folder: _opinions
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    preview_path: "opinions/{{year}}/{{month}}/{{day}}/{{slug}}/"
+    # Filename == URL slug == preview path. No date prefix anywhere, so the
+    # "View on Live Site" button resolves to the page that actually exists.
+    slug: "{{slug}}"
+    preview_path: "opinions/{{slug}}/"
     summary: "{{title}}  —  {{commit_date | date('MMM D, YYYY')}}"
     sortable_fields: [date, title]
     view_filters:

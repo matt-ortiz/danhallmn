@@ -27,12 +27,18 @@ kindful_org: "International Ministerial Fellowship"
 forms_ready: false
 
 # --- Opinions --------------------------------------------------------------
-permalink: /opinions/:year/:month/:day/:title/
+# A collection rather than _posts, so filenames carry no date prefix. That
+# keeps the URL short (/opinions/the-title/) and lets the CMS's "View on Live
+# Site" link resolve to exactly the same slug it wrote.
+collections:
+  opinions:
+    output: true
+    permalink: /opinions/:name/
 
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "opinions"
     values:
       layout: "post"
 
@@ -42,7 +48,9 @@ plugins:
   - jekyll-sitemap
 
 feed:
-  path: /opinions/feed.xml
+  collections:
+    opinions:
+      path: /opinions/feed.xml
 
 exclude:
   - README.md
