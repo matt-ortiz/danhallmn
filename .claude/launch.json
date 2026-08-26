@@ -1,1 +1,1 @@
-{"version":"0.0.1","configurations":[{"name":"dh","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8341","--directory","/private/tmp/claude-502/-Users-matt-PycharmProjects-DanHallMN/f9b4ec14-63e2-4516-9b52-d3df1777be27/scratchpad/mirror"],"port":8341}]}
+{"version":"0.0.1","configurations":[{"name":"dh","runtimeExecutable":"python3","runtimeArgs":["-m","http.server","8342","--directory","/private/tmp/claude-502/-Users-matt-PycharmProjects-DanHallMN/f9b4ec14-63e2-4516-9b52-d3df1777be27/scratchpad/mirror"],"port":8342}]}
