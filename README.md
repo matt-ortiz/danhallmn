@@ -1,54 +1,81 @@
 # DanHallMN.com
 
-Static site for Dan Hall's ministry. No build step — plain HTML/CSS, hosted on GitHub Pages.
+Static site for Dan Hall's ministry. Markdown + Liquid, built natively by
+GitHub Pages' Jekyll — no Actions, no npm, nothing to run locally.
 
-## Pages
+## How Dan publishes
 
-| File | Purpose | Public? |
-|---|---|---|
-| `index.html` | Coming-soon placeholder. This is what visitors to danhallmn.com see today. | Yes |
-| `preview.html` | Working draft of the real home page, for Dan's review. `noindex, nofollow`. | Unlisted |
+He goes to **https://danhallmn.com/admin/**, clicks *Sign in with GitHub*, and
+gets a real editor. Writing a post means: type a title, pick a date and a
+category, write the body, click **Publish**. Sveltia CMS commits the Markdown
+to this repo; GitHub Pages rebuilds in about a minute.
 
-Preview link to send Dan once deployed: `https://danhallmn.com/preview.html`
+He can do the same for gallery photos (drag and drop) and for the standing copy
+on About, Truth Report, Pastors, Intercessors, Donate, and Contact.
 
-## Local preview
+He never sees YAML, a filename convention, or a git commit. If the CMS ever
+breaks, the content is still plain Markdown in `_posts/` — editable through
+GitHub's web UI, or by you.
 
-```bash
-python3 -m http.server 8000
+## Structure
+
+```
+_config.yml           site-wide values + the prelaunch switch
+_layouts/             default, page, post
+_includes/            head, header, footer, preview bar, card icons, form slots
+_posts/               opinion pieces (this is what the CMS writes)
+_data/audiences.yml   the three signup cards on the home page
+_data/gallery.yml     gallery photos (CMS-managed)
+admin/                Sveltia CMS — the editor Dan uses
+index.html            coming-soon placeholder, served at /
+home.html             the real home page, parked at /preview/ until launch
+about.md, truth-report.md, pastors.md, intercessors.md,
+donate.md, contact.md, opinions.html, gallery.html
 ```
 
-Then open http://localhost:8000/ and http://localhost:8000/preview.html
+`site.prelaunch: true` in `_config.yml` currently does two things: puts
+`noindex, nofollow` on every real page, and shows the red preview bar.
 
-## Still needed from Dan
+## Preview links for Dan
 
-- [ ] Public contact email address — currently `CONTACT@EXAMPLE.COM` in `index.html` and `preview.html`
-- [ ] Mission statement (2–3 sentences)
-- [ ] Biography (500–800 words) + professional headshot
-- [ ] 5–10 ministry / event photos
-- [ ] Constant Contact embed codes for all three lists (Truth Report, Pastors, State Intercessors)
-- [ ] 3–5 opinion pieces to seed the Opinions page
-- [ ] Design inspiration: 2–3 sites he likes
-- [ ] Social links, if any
+| Page | URL |
+|---|---|
+| Home | https://danhallmn.com/preview/ |
+| Opinions | https://danhallmn.com/opinions/ |
+| A post | https://danhallmn.com/opinions/2026/08/20/sample-post-you-can-delete/ |
+| Gallery | https://danhallmn.com/gallery/ |
+| About | https://danhallmn.com/about/ |
+| Editor | https://danhallmn.com/admin/ |
 
-Every placeholder in the HTML is marked with `[Placeholder ...]` in italics or a
-`TODO` comment, so they're easy to find:
+## Setup still to do
 
-```bash
-grep -rn "Placeholder\|TODO\|EXAMPLE.COM" *.html
-```
+### 1. CMS authentication (Cloudflare Worker)
 
-## Deploy (GitHub Pages)
+The editor needs a tiny OAuth relay so Dan can click *Sign in with GitHub*.
+It's Sveltia's official Worker: https://github.com/sveltia/sveltia-cms-auth
 
-1. Push to `main` on the site repo.
-2. Repo → Settings → Pages → Source: **Deploy from a branch**, branch `main`, folder `/ (root)`.
-3. Custom domain: `danhallmn.com` (the `CNAME` file in this repo sets it).
-4. Wait for the DNS check to pass, then tick **Enforce HTTPS**.
+1. Deploy it — use the repo's *Deploy to Cloudflare* button, or
+   `wrangler deploy` after `wrangler login`. Note the URL:
+   `https://sveltia-cms-auth.<subdomain>.workers.dev`
+2. Register a GitHub OAuth App at https://github.com/settings/applications/new
+   - **Application name:** `Dan Hall Ministry CMS`
+   - **Homepage URL:** `https://danhallmn.com`
+   - **Authorization callback URL:** `<worker-url>/callback`
+3. In the Worker's **Settings → Variables**, set:
+   - `GITHUB_CLIENT_ID` — from step 2
+   - `GITHUB_CLIENT_SECRET` — from step 2, click **Encrypt**
+   - `ALLOWED_DOMAINS` — `danhallmn.com`
+4. Put the Worker URL into `admin/config.yml` → `backend.base_url`
+   (currently `https://REPLACE-ME.workers.dev`).
 
-`.nojekyll` is present so GitHub serves the files as-is without running Jekyll.
+### 2. Give Dan access
 
-## DNS
+Invite his GitHub account as a **collaborator** on this repo with Write access.
+That's what lets him publish. Nothing else about his account matters.
 
-At the registrar, for the apex domain `danhallmn.com` — four A records:
+### 3. DNS (Cloudflare)
+
+Apex `danhallmn.com` → four A records, **grey cloud / DNS only**:
 
 ```
 185.199.108.153
@@ -57,9 +84,49 @@ At the registrar, for the apex domain `danhallmn.com` — four A records:
 185.199.111.153
 ```
 
-And a CNAME for `www` → `matt-ortiz.github.io`
+Plus `CNAME www → matt-ortiz.github.io`, also DNS only. Proxying (orange cloud)
+blocks GitHub's cert issuance and causes a redirect loop with Enforce HTTPS.
+Once the cert issues, turn on **Enforce HTTPS** in repo Settings → Pages.
+
+## Still needed from Dan
+
+- [ ] Public contact email — currently `CONTACT@EXAMPLE.COM` in `_config.yml`
+- [ ] Mission statement (2–3 sentences) — `home.html`
+- [ ] Biography (500–800 words) + professional headshot — `about.md`
+- [ ] 5–10 ministry / event photos
+- [ ] Constant Contact embed codes for all three lists
+- [ ] 3–5 opinion pieces to seed the Opinions page
+- [ ] Design inspiration: 2–3 sites he likes
+- [ ] Social links, if any
+
+Find every placeholder:
+
+```bash
+grep -rn "Placeholder\|REPLACE-ME\|EXAMPLE.COM" --include="*.html" --include="*.md" --include="*.yml" .
+```
+
+### Constant Contact forms
+
+When an embed code arrives, save it as `_includes/cc-<list>.html` — the list
+names are `truth-report`, `pastors`, `intercessors`. Then set
+`forms_ready: true` in `_config.yml`. Until then each page shows a labelled
+placeholder box instead of a broken form.
+
+## Launching
+
+1. Fill in the real content and flip `forms_ready: true`.
+2. In `_config.yml`, set `prelaunch: false`.
+3. Replace the placeholder: delete `index.html`, then in `home.html` change
+   `permalink: /preview/` to `permalink: /`.
+4. Commit and push. Confirm **Enforce HTTPS** is on.
+
+## Local preview
+
+Optional — GitHub Pages builds this on push, so you don't need Ruby locally.
+If you want it: `bundle exec jekyll serve` with the `github-pages` gem.
 
 ## Donations
 
-Kindful campaign link (live, do not change):
+Kindful campaign link (live, do not change) — set in `_config.yml` as
+`kindful_url`:
 https://internationalministerialfellowship-bloom.kindful.com/?campaign=1419518
