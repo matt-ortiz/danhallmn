@@ -94,14 +94,37 @@ Once the cert issues, turn on **Enforce HTTPS** in repo Settings → Pages.
 
 ## Still needed from Dan
 
-- [ ] Public contact email — currently `CONTACT@EXAMPLE.COM` in `_config.yml`
-- [ ] Mission statement (2–3 sentences) — `home.html`
-- [ ] Biography (500–800 words) + professional headshot — `about.md`
-- [ ] 5–10 ministry / event photos
-- [ ] Constant Contact embed codes for all three lists
+- [ ] **Professional headshot** — the About page has a stand-in block
+- [ ] 5–10 ministry / event photos for the gallery
+- [ ] **Inline Constant Contact embed codes** for all three lists (see below)
+- [ ] Copy for the Pastors and Intercessors pages
 - [ ] 3–5 opinion pieces to seed the Opinions page
+- [ ] A published ministry email, if he wants one listed (`contact_email` is
+      blank; pages fall back to phone and Facebook)
+- [ ] Confirm what **"CPR events"** stands for — it appears on his donation page
+      and now on ours, but readers won't know the acronym
 - [ ] Design inspiration: 2–3 sites he likes
-- [ ] Social links, if any
+
+Bio, mission statement, donation details, phone, and Facebook are all in and
+sourced from his IMF/Kindful page.
+
+### Why the Truth Report signup is a button, not an embed
+
+The link Dan supplied is a *hosted landing page*
+(`lp.constantcontactpages.com/su/...`), not an embed code. It sits behind a
+bot-check interstitial, which does not complete inside a cross-origin iframe —
+tested, and it renders blank. So the site links out to it in a new tab instead.
+
+To get a true inline form, Dan needs to generate a **sign-up form embed code**
+in Constant Contact (a different feature from a landing page). Save it as
+`_includes/cc-<list>.html` and set `forms_ready: true` in `_config.yml`.
+
+### The form is too long
+
+The hosted form requires eight fields: email, first name, last name, phone,
+street, city, state, and postal code. That is a lot to ask of someone who just
+wants a weekly email, and it will cost signups. Worth asking Dan to make
+everything except email and name optional in Constant Contact.
 
 Find every placeholder:
 
