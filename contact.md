@@ -7,26 +7,12 @@ permalink: /contact/
 description: Contact Dan Hall — by phone, on Facebook, or by mail.
 ---
 
-## By phone
+Whether it's a prayer request, a speaking invitation, or a question about one
+of the email lists, Dan reads and answers what comes in.
 
-Dan can be reached directly at
-**[{{ site.contact_phone }}](tel:{{ site.contact_phone_link }})**.
+{% include contact-form.html %}
 
-## On Facebook
-
-Follow the ministry at
-**[facebook.com/DanHallMinistry]({{ site.facebook_url }})**.
-
-## By mail
-
-For donations and correspondence:
-
-> {{ site.mail_to }}
-> {{ site.mail_address_1 }}
-> {{ site.mail_address_2 }}
-
-{% if site.contact_email != "" %}
-## By email
-
-**[{{ site.contact_email }}](mailto:{{ site.contact_email }})**
+{% if site.contact_form_endpoint == "" %}
+For donations by mail, make checks payable to **IMF** with **Dan Hall** in the
+memo line.
 {% endif %}

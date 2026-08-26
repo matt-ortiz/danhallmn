@@ -1,0 +1,53 @@
+{%- comment -%}
+  Renders a working contact form once site.contact_form_endpoint is set.
+  Until then, shows the contact methods Dan actually has today.
+  GitHub Pages serves static files only, so the form posts to a third-party
+  handler (Formspree free tier is enough for this volume).
+{%- endcomment -%}
+
+{% if site.contact_form_endpoint != "" %}
+<form class="contact-form" action="{{ site.contact_form_endpoint }}" method="POST">
+  <div class="field">
+    <label for="cf-name">Your name</label>
+    <input id="cf-name" name="name" type="text" autocomplete="name" required>
+  </div>
+  <div class="field">
+    <label for="cf-email">Your email</label>
+    <input id="cf-email" name="email" type="email" autocomplete="email" required>
+  </div>
+  <div class="field">
+    <label for="cf-subject">Subject</label>
+    <select id="cf-subject" name="subject">
+      <option>General question</option>
+      <option>Prayer request</option>
+      <option>Speaking request</option>
+      <option>Something else</option>
+    </select>
+  </div>
+  <div class="field">
+    <label for="cf-message">Message</label>
+    <textarea id="cf-message" name="message" rows="6" required></textarea>
+  </div>
+  <p class="field-hidden" aria-hidden="true">
+    <label>Leave this empty<input name="_gotcha" tabindex="-1" autocomplete="off"></label>
+  </p>
+  <button class="btn btn--gold" type="submit">Send message</button>
+</form>
+{% else %}
+<div class="contact-panel">
+  <div class="contact-panel__item">
+    <span class="contact-panel__label">Call</span>
+    <a class="contact-panel__value" href="tel:{{ site.contact_phone_link }}">{{ site.contact_phone }}</a>
+  </div>
+  <div class="contact-panel__item">
+    <span class="contact-panel__label">Message</span>
+    <a class="contact-panel__value" href="{{ site.facebook_url }}" target="_blank" rel="noopener">On Facebook</a>
+  </div>
+  <div class="contact-panel__item">
+    <span class="contact-panel__label">Write</span>
+    <span class="contact-panel__value contact-panel__value--plain">
+      {{ site.mail_to }}<br>{{ site.mail_address_1 }}<br>{{ site.mail_address_2 }}
+    </span>
+  </div>
+</div>
+{% endif %}

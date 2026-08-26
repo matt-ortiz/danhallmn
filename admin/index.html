@@ -12,6 +12,9 @@ sitemap: false
   <link rel="icon" href="data:,">
 </head>
 <body>
-  <script src="https://unpkg.com/@sveltia/cms/dist/sveltia-cms.js" type="module"></script>
+  <!-- Pinned deliberately. Sveltia ships ~40 releases a month and is still 0.x,
+       so an unpinned CDN load can change the editor under Dan without warning.
+       To update: bump the version here, open /admin/, confirm it still works. -->
+  <script src="https://unpkg.com/@sveltia/cms@0.200.0/dist/sveltia-cms.js" type="module"></script>
 </body>
 </html>

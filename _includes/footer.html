@@ -1,32 +1,45 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-grid">
-      <div>
+
+      <div class="footer-brand">
         <h4>{{ site.title }} Ministry</h4>
-        <p style="max-width:36ch">{{ site.description }}</p>
-        <p class="footer-contact">
-          <a href="tel:{{ site.contact_phone_link }}">{{ site.contact_phone }}</a>
-        </p>
+        <p>{{ site.description }}</p>
       </div>
+
       <div>
-        <h4>Pages</h4>
+        <h4>Explore</h4>
         <ul class="footer-list">
-          <li><a href="{{ '/about/'        | relative_url }}">About Dan</a></li>
-          <li><a href="{{ '/truth-report/' | relative_url }}">The Truth Report</a></li>
-          <li><a href="{{ '/pastors/'      | relative_url }}">For Pastors</a></li>
-          <li><a href="{{ '/intercessors/' | relative_url }}">State Intercessors</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>More</h4>
-        <ul class="footer-list">
+          <li><a href="{{ '/about/'    | relative_url }}">About Dan</a></li>
           <li><a href="{{ '/opinions/' | relative_url }}">Opinions</a></li>
           <li><a href="{{ '/gallery/'  | relative_url }}">Photo Gallery</a></li>
-          <li><a href="{{ '/donate/' | relative_url }}">Donate</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-          <li><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="{{ '/donate/'   | relative_url }}">Give</a></li>
         </ul>
       </div>
+
+      <div>
+        <h4>Subscribe</h4>
+        <ul class="footer-list">
+          <li><a href="{{ '/truth-report/'  | relative_url }}">The Truth Report</a></li>
+          <li><a href="{{ '/pastors/'       | relative_url }}">For Pastors</a></li>
+          <li><a href="{{ '/intercessors/'  | relative_url }}">State Intercessors</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-connect">
+        <h4>Get in Touch</h4>
+        <p class="footer-phone">
+          <a href="tel:{{ site.contact_phone_link }}">{{ site.contact_phone }}</a>
+        </p>
+        <ul class="footer-list">
+          {% if site.contact_email != "" %}
+          <li><a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a></li>
+          {% endif %}
+          <li><a href="{{ site.facebook_url }}" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">All contact details</a></li>
+        </ul>
+      </div>
+
     </div>
     <div class="footer-bottom">
       <span>&copy; {{ 'now' | date: "%Y" }} {{ site.title }} Ministry. All rights reserved.</span>
