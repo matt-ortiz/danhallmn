@@ -57,7 +57,7 @@ At the registrar, for the apex domain `danhallmn.com` — four A records:
 185.199.111.153
 ```
 
-And a CNAME for `www` → `<github-username>.github.io`
+And a CNAME for `www` → `matt-ortiz.github.io`
 
 ## Donations
 

@@ -1,0 +1,70 @@
+---
+layout: default
+title: Opinions
+permalink: /opinions/
+description: Thoughts and insights from Dan Hall on Christian, conservative, and biblical topics.
+---
+
+<section class="hero hero--compact">
+  <div class="wrap">
+    <p class="eyebrow">Opinions</p>
+    <h1>Thoughts on the week.</h1>
+    <p class="hero__lead">Where Dan works through what he is seeing, and what Scripture says about it.</p>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap wrap--narrow">
+
+    {% if site.categories.size > 0 %}
+    <div class="filterbar" role="group" aria-label="Filter by category">
+      <button class="chip chip--on" data-cat="all" type="button">All</button>
+      {% for cat in site.categories %}
+        <button class="chip" data-cat="{{ cat[0] | slugify }}" type="button">{{ cat[0] }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="posts" id="post-list">
+      {% for post in site.posts %}
+      <article class="post"
+               data-cats="{% for c in post.categories %}{{ c | slugify }} {% endfor %}">
+        <p class="post__meta">
+          {{ post.date | date: "%B %-d, %Y" }}
+          {%- if post.categories.size > 0 %} &middot;
+            {% for c in post.categories %}{{ c }}{% unless forloop.last %}, {% endunless %}{% endfor %}
+          {%- endif %}
+        </p>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        <p>{{ post.excerpt | strip_html | truncatewords: 34 }}</p>
+        <a href="{{ post.url | relative_url }}">Read more &rarr;</a>
+      </article>
+      {% else %}
+      <p class="empty">No opinion pieces published yet. The first one Dan posts will appear here.</p>
+      {% endfor %}
+    </div>
+
+    <p class="feed-note">
+      Follow along by <a href="{{ '/opinions/feed.xml' | relative_url }}">RSS</a>.
+    </p>
+  </div>
+</section>
+
+<script>
+(function () {
+  var chips = document.querySelectorAll('.chip');
+  var posts = document.querySelectorAll('#post-list .post');
+  if (!chips.length) return;
+
+  chips.forEach(function (chip) {
+    chip.addEventListener('click', function () {
+      var cat = chip.dataset.cat;
+      chips.forEach(function (c) { c.classList.toggle('chip--on', c === chip); });
+      posts.forEach(function (p) {
+        var show = cat === 'all' || (' ' + p.dataset.cats + ' ').indexOf(' ' + cat + ' ') > -1;
+        p.style.display = show ? '' : 'none';
+      });
+    });
+  });
+})();
+</script>

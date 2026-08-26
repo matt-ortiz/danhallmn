@@ -1,3 +1,7 @@
+---
+layout: null
+sitemap: false
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 </head>
 <body>
 
@@ -42,24 +46,22 @@
 
       <div class="soon__actions">
         <a class="btn btn--gold"
-           href="https://internationalministerialfellowship-bloom.kindful.com/?campaign=1419518"
+           href="{{ site.kindful_url }}"
            target="_blank" rel="noopener">Support the Ministry</a>
-        <!-- TODO: replace with Dan's public contact address -->
-        <a class="btn btn--ghost-light" href="mailto:CONTACT@EXAMPLE.COM">Get in Touch</a>
+        <a class="btn btn--ghost-light" href="mailto:{{ site.contact_email }}">Get in Touch</a>
       </div>
     </div>
   </main>
 
   <div class="soon__footer">
     <div class="wrap">
-      &copy; <span id="year">2026</span> Dan Hall Ministry. Donations processed securely by
-      <a href="https://internationalministerialfellowship-bloom.kindful.com/?campaign=1419518"
-         target="_blank" rel="noopener">International Ministerial Fellowship</a>.
+      &copy; {{ 'now' | date: "%Y" }} {{ site.title }} Ministry. Donations processed securely by
+      <a href="{{ site.kindful_url }}"
+         target="_blank" rel="noopener">{{ site.kindful_org }}</a>.
     </div>
   </div>
 
 </div>
 
-<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

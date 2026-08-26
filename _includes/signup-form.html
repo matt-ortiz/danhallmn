@@ -1,0 +1,18 @@
+{%- comment -%}
+  Constant Contact signup slot.
+  Usage: {% include signup-form.html list="truth-report" label="The Truth Report" %}
+
+  When Dan sends the embed code for a list, paste it into
+  _includes/cc-<list>.html and set  forms_ready: true  in _config.yml.
+  Until then this renders a labelled placeholder so the page never looks broken.
+{%- endcomment -%}
+{%- assign embed_file = 'cc-' | append: include.list | append: '.html' -%}
+{% if site.forms_ready %}
+  {% include {{ embed_file }} %}
+{% else %}
+  <div class="form-slot">
+    <strong>Signup form goes here</strong>
+    Constant Contact embed code for the <em>{{ include.label }}</em> list
+    drops into <code>_includes/{{ embed_file }}</code>.
+  </div>
+{% endif %}

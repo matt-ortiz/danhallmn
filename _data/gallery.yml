@@ -1,0 +1,9 @@
+# Photo gallery. Managed through the editor at /admin/ — Dan drags photos in
+# and they land here automatically.
+#
+# photos:
+#   - image: /assets/img/uploads/example.jpg
+#     caption: "Prayer gathering at the Capitol"
+#     date: 2026-08-01
+
+photos: []

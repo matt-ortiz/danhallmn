@@ -1,0 +1,189 @@
+# ---------------------------------------------------------------------------
+# Sveltia CMS — the editor Dan uses at https://danhallmn.com/admin/
+# Saving here commits to the repo; GitHub Pages rebuilds in about a minute.
+# ---------------------------------------------------------------------------
+
+backend:
+  name: github
+  repo: matt-ortiz/danhallmn
+  branch: main
+  # Cloudflare Worker that handles the "Sign in with GitHub" handshake.
+  # See README → "CMS authentication" for deployment.
+  base_url: https://REPLACE-ME.workers.dev
+
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+site_url: https://danhallmn.com
+display_url: https://danhallmn.com
+logo_url: /assets/img/cms-logo.png
+
+collections:
+
+  # --- Opinion posts -------------------------------------------------------
+  - name: opinions
+    label: Opinions
+    label_singular: Opinion Post
+    description: >-
+      Write a new opinion piece. Click Publish when you're ready — it appears on
+      the site about a minute later.
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    preview_path: "opinions/{{year}}/{{month}}/{{day}}/{{slug}}/"
+    summary: "{{title}}  —  {{commit_date | date('MMM D, YYYY')}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - { label: Culture,  field: categories, pattern: Culture }
+      - { label: Prayer,   field: categories, pattern: Prayer }
+      - { label: Pastors,  field: categories, pattern: Pastors }
+      - { label: Politics, field: categories, pattern: Politics }
+      - { label: Faith,    field: categories, pattern: Faith }
+    fields:
+      - label: Title
+        name: title
+        widget: string
+        hint: The headline readers see. Keep it under about 70 characters.
+
+      - label: Date published
+        name: date
+        widget: datetime
+        date_format: "YYYY-MM-DD"
+        time_format: "HH:mm"
+        format: "YYYY-MM-DD HH:mm:ss ZZ"
+        hint: Leave as today unless you're backdating a piece.
+
+      - label: Category
+        name: categories
+        widget: select
+        multiple: true
+        min: 1
+        max: 2
+        options: [Culture, Prayer, Pastors, Politics, Faith]
+        hint: Pick one or two. Readers use these to filter the Opinions page.
+
+      - label: Short summary
+        name: description
+        widget: text
+        required: false
+        hint: >-
+          One or two sentences shown in search results and when the post is
+          shared. Optional — the opening lines are used if you leave it blank.
+
+      - label: Header image
+        name: image
+        widget: image
+        required: false
+        hint: Optional. Appears at the top of the post.
+
+      - label: Image description
+        name: image_alt
+        widget: string
+        required: false
+        hint: >-
+          A short description of the image for readers using a screen reader.
+          Only needed if you added an image above.
+
+      - label: Post
+        name: body
+        widget: markdown
+        hint: Write here. Use the toolbar for headings, bold, quotes, and links.
+
+      - label: Visible on the site
+        name: published
+        widget: boolean
+        default: true
+        required: false
+        hint: >-
+          Leave on to publish. Turn it off to keep the post saved as a draft
+          without showing it to anyone.
+
+  # --- Photo gallery -------------------------------------------------------
+  - name: gallery
+    label: Photo Gallery
+    description: Add, caption, remove, and reorder the photos on the gallery page.
+    files:
+      - name: photos
+        label: Gallery photos
+        file: _data/gallery.yml
+        fields:
+          - label: Photos
+            name: photos
+            widget: list
+            label_singular: Photo
+            summary: "{{fields.caption}}"
+            fields:
+              - { label: Photo, name: image, widget: image }
+              - { label: Caption, name: caption, widget: string, required: false }
+              - { label: Date taken, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, required: false }
+
+  # --- Editable page copy --------------------------------------------------
+  - name: pages
+    label: Pages
+    description: The standing text on the main pages of the site.
+    files:
+      - name: about
+        label: About Dan
+        file: about.md
+        fields:
+          - { label: Page title, name: title, widget: hidden, default: About Dan }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: URL, name: permalink, widget: hidden, default: /about/ }
+          - { label: Small label above the title, name: eyebrow, widget: string, required: false }
+          - { label: Opening line, name: lead, widget: string, required: false }
+          - { label: Page text, name: body, widget: markdown }
+
+      - name: truth_report
+        label: The Truth Report
+        file: truth-report.md
+        fields:
+          - { label: Page title, name: title, widget: hidden, default: The Truth Report }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: URL, name: permalink, widget: hidden, default: /truth-report/ }
+          - { label: Small label above the title, name: eyebrow, widget: string, required: false }
+          - { label: Opening line, name: lead, widget: string, required: false }
+          - { label: Page text, name: body, widget: markdown }
+
+      - name: pastors
+        label: For Pastors
+        file: pastors.md
+        fields:
+          - { label: Page title, name: title, widget: hidden, default: For Pastors }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: URL, name: permalink, widget: hidden, default: /pastors/ }
+          - { label: Small label above the title, name: eyebrow, widget: string, required: false }
+          - { label: Opening line, name: lead, widget: string, required: false }
+          - { label: Page text, name: body, widget: markdown }
+
+      - name: intercessors
+        label: State Intercessors
+        file: intercessors.md
+        fields:
+          - { label: Page title, name: title, widget: hidden, default: State Intercessors }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: URL, name: permalink, widget: hidden, default: /intercessors/ }
+          - { label: Small label above the title, name: eyebrow, widget: string, required: false }
+          - { label: Opening line, name: lead, widget: string, required: false }
+          - { label: Page text, name: body, widget: markdown }
+
+      - name: donate
+        label: Donate
+        file: donate.md
+        fields:
+          - { label: Page title, name: title, widget: hidden, default: Donate }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: URL, name: permalink, widget: hidden, default: /donate/ }
+          - { label: Small label above the title, name: eyebrow, widget: string, required: false }
+          - { label: Opening line, name: lead, widget: string, required: false }
+          - { label: Page text, name: body, widget: markdown }
+
+      - name: contact
+        label: Contact
+        file: contact.md
+        fields:
+          - { label: Page title, name: title, widget: hidden, default: Contact }
+          - { label: Layout, name: layout, widget: hidden, default: page }
+          - { label: URL, name: permalink, widget: hidden, default: /contact/ }
+          - { label: Small label above the title, name: eyebrow, widget: string, required: false }
+          - { label: Opening line, name: lead, widget: string, required: false }
+          - { label: Page text, name: body, widget: markdown }

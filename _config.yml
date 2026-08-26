@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------------------
+# DanHallMN.com — Jekyll configuration
+# Built natively by GitHub Pages; no Actions, no build step to run locally.
+# ---------------------------------------------------------------------------
+
+title: Dan Hall
+tagline: Ministry · Minnesota
+description: >-
+  Truth for the church, resources for pastors, and prayer for our state,
+  our nation, and the world.
+url: "https://danhallmn.com"
+baseurl: ""
+lang: en
+
+# --- Launch switch ---------------------------------------------------------
+# true  = "/" shows the coming-soon placeholder; every real page carries
+#         <meta name="robots" content="noindex"> so nothing gets indexed early.
+# false = launch mode. See README for the two-line flip.
+prelaunch: true
+
+# --- Values used across the site (edit here, not in the HTML) --------------
+contact_email: "CONTACT@EXAMPLE.COM"
+kindful_url: "https://internationalministerialfellowship-bloom.kindful.com/?campaign=1419518"
+kindful_org: "International Ministerial Fellowship"
+
+# Flip to true once every _includes/cc-*.html embed code is in place.
+forms_ready: false
+
+# --- Opinions --------------------------------------------------------------
+permalink: /opinions/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: /opinions/feed.xml
+
+exclude:
+  - README.md
+  - CNAME
+  - "*.docx"
+  - .claude/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock

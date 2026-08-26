@@ -1,0 +1,46 @@
+---
+layout: default
+title: Photo Gallery
+permalink: /gallery/
+description: Photos from Dan Hall's ministry — events, gatherings, and the people behind the work.
+---
+
+<section class="hero hero--compact">
+  <div class="wrap">
+    <p class="eyebrow">Photo Gallery</p>
+    <h1>Ministry in motion.</h1>
+    <p class="hero__lead">Moments from events, gatherings, and the people this ministry serves.</p>
+  </div>
+</section>
+
+<section class="section section--paper">
+  <div class="wrap">
+    {% assign photos = site.data.gallery.photos %}
+    {% if photos and photos.size > 0 %}
+    <div class="gallery">
+      {% for photo in photos %}
+      <figure class="gallery__item gallery__item--filled">
+        <img src="{{ photo.image | relative_url }}"
+             alt="{{ photo.caption | default: 'Ministry photo' | escape }}"
+             loading="lazy" width="800" height="800">
+        {% if photo.caption %}
+        <figcaption>
+          {{ photo.caption }}
+          {% if photo.date %}<span>{{ photo.date | date: "%B %Y" }}</span>{% endif %}
+        </figcaption>
+        {% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="gallery">
+      {% for i in (1..8) %}
+      <div class="gallery__item">Photo {{ i }}</div>
+      {% endfor %}
+    </div>
+    <p class="empty" style="margin-top:24px">
+      Stand-in tiles. Real photos appear here as soon as they are added in the editor.
+    </p>
+    {% endif %}
+  </div>
+</section>

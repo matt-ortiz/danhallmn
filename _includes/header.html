@@ -1,0 +1,17 @@
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="brand" href="{% if site.prelaunch %}{{ '/preview/' | relative_url }}{% else %}{{ '/' | relative_url }}{% endif %}">
+      <span class="brand__name">{{ site.title }}</span>
+      <span class="brand__tag">{{ site.tagline }}</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="{{ '/about/'         | relative_url }}">About</a>
+      <a href="{{ '/truth-report/'  | relative_url }}">Truth Report</a>
+      <a href="{{ '/pastors/'       | relative_url }}">Pastors</a>
+      <a href="{{ '/intercessors/'  | relative_url }}">Intercessors</a>
+      <a href="{{ '/opinions/'      | relative_url }}">Opinions</a>
+      <a href="{{ '/gallery/'       | relative_url }}">Photos</a>
+      <a class="btn btn--gold" href="{{ site.kindful_url }}" target="_blank" rel="noopener">Donate</a>
+    </nav>
+  </div>
+</header>
