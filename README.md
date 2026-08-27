@@ -151,13 +151,42 @@ names are `truth-report`, `pastors`, `intercessors`. Then set
 `forms_ready: true` in `_config.yml`. Until then each page shows a labelled
 placeholder box instead of a broken form.
 
+## SEO
+
+Everything technical is in place and verified live:
+
+- **Social cards** — full Open Graph + Twitter meta on every page, with a
+  branded 1200x630 card at `assets/img/social/og-default.png`. Individual posts
+  can override it with an `image:` in front matter. Check with heymeta.com.
+- **Icons** — favicon.ico, 192px, 512px, and apple-touch-icon, all generated
+  from the site palette. Regenerate by editing the Pillow script in git history
+  or just replace the PNGs.
+- **Structured data** — a JSON-LD Person/WebSite graph, plus BlogPosting on
+  opinion pages. Validated as parsing JSON on all three page types. This is
+  what lets Google connect the site to Dan as a public figure with a record.
+- **Crawl control** — `robots.txt` disallows everything while `prelaunch: true`,
+  then allows all but `/admin/` and `/preview/`. Sitemap auto-generated.
+
+### Still SEO-blocked on Dan
+
+- A **photo of Dan** for the OG card. The branded card is a decent fallback but
+  a face performs better when shared.
+- Real copy on `/pastors/` and `/intercessors/` — thin pages rank poorly, and
+  their `description:` front matter is generic until the copy exists.
+- Alt text comes from gallery captions, so captions matter.
+
 ## Launching
 
 1. Fill in the real content and flip `forms_ready: true`.
-2. In `_config.yml`, set `prelaunch: false`.
+2. In `_config.yml`, set `prelaunch: false`. **This is the switch that lets the
+   site be indexed at all** — forget it and Google never sees the site.
 3. Replace the placeholder: delete `index.html`, then in `home.html` change
-   `permalink: /preview/` to `permalink: /`.
+   `permalink: /preview/` to `permalink: /` and drop its `noindex`/`sitemap`
+   lines.
 4. Commit and push. Confirm **Enforce HTTPS** is on.
+5. Verify: `curl https://danhallmn.com/robots.txt` should no longer say
+   `Disallow: /`, and pages should say `index, follow`.
+6. Submit the sitemap in Google Search Console.
 
 ## Local preview
 
