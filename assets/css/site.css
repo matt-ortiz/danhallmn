@@ -727,79 +727,40 @@ a:focus-visible, .btn:focus-visible, .chip:focus-visible, button:focus-visible {
 
 
 /* --- Contact ------------------------------------------------------------- */
-.contact-panel {
+.contact-cards {
   display: grid;
-  gap: 0;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  margin: 2em 0;
+}
+.contact-card {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  padding: 20px 22px;
+  background: var(--cream-2);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: var(--cream-2);
-  margin: 2em 0;
-  overflow: hidden;
 }
-.contact-panel__item {
-  display: grid;
-  gap: 4px;
-  padding: 20px 24px;
-  border-bottom: 1px solid var(--line);
-}
-.contact-panel__item:last-child { border-bottom: 0; }
-.contact-panel__label {
+.contact-card__label {
   font-size: .7rem;
   font-weight: 600;
   letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--gold);
 }
-.contact-panel__value {
+.contact-card__value {
   font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-size: 1.16rem;
+  line-height: 1.35;
   color: var(--ink);
   text-decoration: none;
+  overflow-wrap: anywhere;
 }
-a.contact-panel__value:hover { color: var(--gold); }
-.contact-panel__value--plain {
+a.contact-card__value:hover { color: var(--gold); }
+.contact-card__value--plain {
   font-family: var(--font-body);
-  font-size: .98rem;
+  font-size: .95rem;
   line-height: 1.6;
   color: var(--body);
-}
-@media (min-width: 720px) {
-  .contact-panel { grid-template-columns: repeat(3, 1fr); }
-  .contact-panel__item { border-bottom: 0; border-right: 1px solid var(--line); }
-  .contact-panel__item:last-child { border-right: 0; }
-}
-
-.contact-form { margin: 2em 0; max-width: 34rem; }
-.contact-form .field { margin-bottom: 18px; }
-.contact-form label {
-  display: block;
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .04em;
-  color: var(--ink);
-  margin-bottom: 6px;
-}
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  width: 100%;
-  font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--body);
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  padding: .7em .85em;
-}
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: 2px solid var(--gold);
-  outline-offset: 1px;
-  border-color: var(--gold);
-}
-.contact-form textarea { resize: vertical; }
-.contact-form .field-hidden {
-  position: absolute; left: -9999px;
-  width: 1px; height: 1px; overflow: hidden;
 }

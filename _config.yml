@@ -20,17 +20,10 @@ lang: en
 prelaunch: true
 
 # --- Values used across the site (edit here, not in the HTML) --------------
-# Dan has no published ministry email yet — templates fall back to phone and
-# Facebook while this is blank. Fill it in and the mailto links reappear.
-contact_email: ""
+contact_email: "danhallmn@gmail.com"
 contact_phone: "612-790-2000"
 contact_phone_link: "+16127902000"
 facebook_url: "https://www.facebook.com/DanHallMinistry"
-
-# A static site can't process a form on its own. Paste a Formspree (or similar)
-# endpoint here and the contact page swaps its "get in touch" panel for a real
-# working form. Needs contact_email set first — that's where messages land.
-contact_form_endpoint: ""
 
 # Mail-in donations go to Dan's sponsoring organization, not a home address.
 mail_to: "IMF Donation - Dan Hall"

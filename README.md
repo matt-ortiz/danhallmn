@@ -99,8 +99,6 @@ Once the cert issues, turn on **Enforce HTTPS** in repo Settings → Pages.
 - [ ] **Inline Constant Contact embed codes** for all three lists (see below)
 - [ ] Copy for the Pastors and Intercessors pages
 - [ ] 3–5 opinion pieces to seed the Opinions page
-- [ ] A published ministry email — needed twice over: `contact_email` for the
-      footer, and as the destination before a contact form can work
 - [ ] Confirm what **"CPR events"** stands for — it appears on his donation page
       and now on ours, but readers won't know the acronym
 - [ ] Design inspiration: 2–3 sites he likes
@@ -119,19 +117,12 @@ To get a true inline form, Dan needs to generate a **sign-up form embed code**
 in Constant Contact (a different feature from a landing page). Save it as
 `_includes/cc-<list>.html` and set `forms_ready: true` in `_config.yml`.
 
-### Contact form
+### Contact
 
-`/contact/` shows Dan's real contact methods (phone, Facebook, mail) today. To
-turn on a working form instead:
-
-1. Set `contact_email` in `_config.yml` — that's where messages go.
-2. Create a free Formspree form pointed at that address.
-3. Paste its endpoint into `contact_form_endpoint` in `_config.yml`.
-
-The form markup, spam honeypot, and styling already exist in
-`_includes/contact-form.html`; it swaps in automatically. GitHub Pages serves
-static files only, so a third-party handler is required — there is no way to
-process a form on the server here.
+`/contact/` lists four ways to reach Dan — email, phone, Facebook, mail — all
+driven from `_config.yml`. No contact form by design: a static site can't
+process one, so a form would mean a third-party handler and a delivery path
+that can fail silently. A `mailto:` link cannot.
 
 ### Updating the CMS version
 

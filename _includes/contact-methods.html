@@ -1,0 +1,29 @@
+{%- comment -%}
+  The four ways to reach Dan. Values come from _config.yml so they are edited
+  in one place. Used on /contact/; safe to include anywhere.
+{%- endcomment -%}
+<div class="contact-cards">
+
+  <div class="contact-card">
+    <span class="contact-card__label">Email</span>
+    <a class="contact-card__value" href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-card__label">Call</span>
+    <a class="contact-card__value" href="tel:{{ site.contact_phone_link }}">{{ site.contact_phone }}</a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-card__label">Message</span>
+    <a class="contact-card__value" href="{{ site.facebook_url }}" target="_blank" rel="noopener">On Facebook</a>
+  </div>
+
+  <div class="contact-card">
+    <span class="contact-card__label">Write</span>
+    <span class="contact-card__value contact-card__value--plain">
+      {{ site.mail_to }}<br>{{ site.mail_address_1 }}<br>{{ site.mail_address_2 }}
+    </span>
+  </div>
+
+</div>

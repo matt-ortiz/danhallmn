@@ -54,5 +54,7 @@ believes preserving religious freedom is central to America's future.
 
 ## Reach Dan
 
-Dan can be reached directly by phone at
+Dan can be reached directly at
+**[{{ site.contact_email }}](mailto:{{ site.contact_email }})**
+or by phone at
 **[{{ site.contact_phone }}](tel:{{ site.contact_phone_link }})**.
