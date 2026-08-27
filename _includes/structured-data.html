@@ -2,9 +2,9 @@
   JSON-LD. Every fact here comes from Dan's own published material.
   Google uses this to connect the site to him as a real, identifiable person —
   which matters a lot for someone with a public record as a State Senator.
-  Suppressed while prelaunch, so nothing is asserted before launch.
+  Rendered always, including pre-launch: it is inert on a noindexed page, and
+  shipping the same code path we tested beats one that first runs on launch day.
 {%- endcomment -%}
-{%- unless site.prelaunch -%}
 {%- assign home_url = '/' | absolute_url -%}
 <script type="application/ld+json">
 {
@@ -69,4 +69,3 @@
   ]
 }
 </script>
-{%- endunless -%}
