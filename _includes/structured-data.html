@@ -1,0 +1,72 @@
+{%- comment -%}
+  JSON-LD. Every fact here comes from Dan's own published material.
+  Google uses this to connect the site to him as a real, identifiable person —
+  which matters a lot for someone with a public record as a State Senator.
+  Suppressed while prelaunch, so nothing is asserted before launch.
+{%- endcomment -%}
+{%- unless site.prelaunch -%}
+{%- assign home_url = '/' | absolute_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "{{ home_url }}#website",
+      "url": "{{ home_url }}",
+      "name": {{ site.title | append: ' Ministry' | jsonify }},
+      "description": {{ site.description | strip_newlines | strip | jsonify }},
+      "inLanguage": "en-US",
+      "publisher": { "@id": "{{ home_url }}#person" }
+    },
+    {
+      "@type": "Person",
+      "@id": "{{ home_url }}#person",
+      "name": "Dan Hall",
+      "url": "{{ home_url }}",
+      "jobTitle": "Political Chaplain",
+      "description": "Evangelical minister and former Minnesota Senator with more than forty years of experience across ministry, education, and politics. Founder of Midwest Chaplains and publisher of The Truth Report.",
+      "telephone": {{ site.contact_phone | jsonify }},
+      "email": {{ site.contact_email | jsonify }},
+      "image": "{{ '/assets/img/social/og-default.png' | absolute_url }}",
+      "sameAs": [ {{ site.facebook_url | jsonify }} ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "MN",
+        "addressCountry": "US"
+      },
+      "knowsAbout": [
+        "Religious freedom",
+        "Intercessory prayer",
+        "Chaplaincy",
+        "Faith and politics",
+        "Minnesota state government"
+      ],
+      "hasOccupation": {
+        "@type": "Occupation",
+        "name": "Chaplain",
+        "occupationLocation": { "@type": "State", "name": "Minnesota" }
+      }
+    }
+    {%- if page.layout == 'post' -%},
+    {
+      "@type": "BlogPosting",
+      "@id": "{{ page.url | absolute_url }}#post",
+      "headline": {{ page.title | jsonify }},
+      "description": {{ page.description | default: page.title | strip_newlines | strip | jsonify }},
+      "datePublished": "{{ page.date | date_to_xmlschema }}",
+      "dateModified": "{{ page.date | date_to_xmlschema }}",
+      "url": "{{ page.url | absolute_url }}",
+      "mainEntityOfPage": { "@id": "{{ page.url | absolute_url }}" },
+      "author": { "@id": "{{ home_url }}#person" },
+      "publisher": { "@id": "{{ home_url }}#person" },
+      "image": "{{ '/assets/img/social/og-default.png' | absolute_url }}"
+      {%- if page.categories.size > 0 -%}
+      , "articleSection": {{ page.categories | jsonify }}
+      {%- endif -%}
+    }
+    {%- endif -%}
+  ]
+}
+</script>
+{%- endunless -%}

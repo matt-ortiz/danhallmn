@@ -1,0 +1,16 @@
+---
+layout: null
+sitemap: false
+---
+{% if site.prelaunch -%}
+# Pre-launch. Nothing here should be crawled or indexed yet.
+User-agent: *
+Disallow: /
+{%- else -%}
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /preview/
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
+{%- endif %}
