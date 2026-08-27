@@ -730,7 +730,7 @@ a:focus-visible, .btn:focus-visible, .chip:focus-visible, button:focus-visible {
 .contact-cards {
   display: grid;
   gap: 14px;
-  grid-template-columns: repeat(auto-fit, minmax(215px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   margin: 2em 0;
 }
 .contact-card {
