@@ -768,3 +768,96 @@ a.contact-card__value:hover { color: var(--gold); }
   line-height: 1.6;
   color: var(--body);
 }
+
+/* --- Lightbox ------------------------------------------------------------ */
+.gallery__btn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: zoom-in;
+}
+.gallery__btn img { width: 100%; height: 100%; object-fit: cover; }
+
+body.lightbox-open { overflow: hidden; }
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 20px;
+  background: rgba(8, 14, 26, .93);
+  backdrop-filter: blur(3px);
+}
+.lightbox[hidden] { display: none; }
+
+.lightbox__figure {
+  margin: 0;
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.lightbox__img {
+  max-width: 100%;
+  max-height: calc(100vh - 150px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--radius);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, .55);
+}
+.lightbox__caption {
+  color: rgba(255, 255, 255, .82);
+  font-size: .92rem;
+  text-align: center;
+  max-width: 60ch;
+}
+
+.lightbox__close,
+.lightbox__nav {
+  position: absolute;
+  background: rgba(255, 255, 255, .08);
+  border: 1px solid rgba(255, 255, 255, .22);
+  color: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  transition: background-color .15s ease, border-color .15s ease;
+}
+.lightbox__close:hover,
+.lightbox__nav:hover {
+  background: rgba(255, 255, 255, .16);
+  border-color: var(--gold);
+}
+.lightbox__close {
+  top: 16px; right: 16px;
+  width: 42px; height: 42px;
+  font-size: 1.7rem;
+  padding-bottom: 4px;
+}
+.lightbox__nav {
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px; height: 48px;
+  font-size: 2rem;
+  padding-bottom: 5px;
+}
+.lightbox__nav--prev { left: 14px; }
+.lightbox__nav--next { right: 14px; }
+
+@media (max-width: 620px) {
+  .lightbox { padding: 60px 12px; }
+  .lightbox__nav { width: 42px; height: 42px; font-size: 1.7rem; }
+  .lightbox__nav--prev { left: 6px; }
+  .lightbox__nav--next { right: 6px; }
+}
