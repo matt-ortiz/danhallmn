@@ -15,18 +15,22 @@ photos:
   - image: /assets/img/gallery/capitol-podium.jpg
     caption: "At the podium in the Minnesota Capitol"
     date: 2011-01-01
-  - image: /assets/img/gallery/capitol-steps.jpg
-    caption: "Gathering on the Capitol steps"
-    date: 2019-01-01
   - image: /assets/img/gallery/open-bible.jpg
     caption: "Hands folded in prayer over an open Bible"
     date: 2021-01-01
+  - image: /assets/img/gallery/capitol-steps.jpg
+    caption: "Gathering on the Capitol steps"
+    date: 2019-01-01
   - image: /assets/img/gallery/prayer-gathering.jpg
     caption: "A prayer gathering"
     date: 2022-01-01
   - image: /assets/img/gallery/laying-on-of-hands.jpg
     caption: "Praying together at the Capitol"
     date: 2011-01-01
+  - image: /assets/img/gallery/senate-chamber.jpg
+    caption: "In the Senate chamber"
+  - image: /assets/img/gallery/chamber-doors.jpg
+    caption: "At the chamber doors, Minnesota Capitol"
   - image: /assets/img/gallery/capitol-proclamation.jpg
     caption: "A proclamation at the Capitol"
     date: 2011-01-01
@@ -35,5 +39,22 @@ photos:
   - image: /assets/img/gallery/ministry-partners.jpg
     caption: "Ministry partners"
     date: 2023-01-01
-  - image: /assets/img/gallery/senate-chamber.jpg
-    caption: "In the Senate chamber"
+  - image: /assets/img/gallery/dan-portrait.jpg
+    caption: "Dan Hall"
+  - image: /assets/img/gallery/ministry-gathering.jpg
+    caption: "At a ministry gathering"
+    date: 2018-01-01
+  - image: /assets/img/gallery/ministry-friends.jpg
+    caption: "With friends of the ministry"
+    date: 2014-01-01
+  - image: /assets/img/gallery/capitol-recognition.jpg
+    caption: "Recognition at the Minnesota Capitol"
+  - image: /assets/img/gallery/capitol-visit.jpg
+    caption: "At the Minnesota Capitol"
+    date: 2011-01-01
+  - image: /assets/img/gallery/rally-podium.jpg
+    caption: "Speaking at a rally"
+  - image: /assets/img/gallery/dan-and-valerie.jpg
+    caption: "Dan and Valerie Hall"
+  - image: /assets/img/gallery/dan-and-valerie-shore.jpg
+    caption: "Dan and Valerie Hall"
