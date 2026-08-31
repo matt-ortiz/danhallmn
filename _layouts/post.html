@@ -8,7 +8,6 @@ layout: default
         <a href="{{ '/opinions/' | relative_url }}" style="color:inherit;text-decoration:none">&larr; Opinions</a>
       </p>
       <h1>{{ page.title }}</h1>
-      {% if page.author %}<p class="post__author">By {{ page.author }}</p>{% endif %}
       <p class="post__byline">
         {{ page.date | date: "%B %-d, %Y" }}
         {%- if page.categories.size > 0 %} &middot;

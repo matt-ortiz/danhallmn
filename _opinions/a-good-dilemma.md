@@ -2,13 +2,14 @@
 layout: post
 title: "A Good Dilemma: When Both Choices Honor the Lord"
 date: 2026-08-03 08:00:00 -0500
-author: "Dan and Valerie Hall, Chaplains to Minnesota Politics"
 categories: [Politics, Prayer]
 description: >-
   Seven Republicans are on the August 11 ballot for governor, and two of them
   are godly people. When both choices are good, the decision drives us to our
   knees — and that is a blessing, not a burden.
 ---
+
+*By Dan and Valerie Hall, Chaplains to Minnesota Politics — Dan Hall Ministries*
 
 Minnesota Republicans find ourselves in a dilemma this summer, but let me be
 quick to say, it is a good dilemma. It is the kind of problem for which we
