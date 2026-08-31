@@ -7,6 +7,12 @@ noindex: true
 description: Dan Hall — evangelical minister, former Minnesota Senator, and political chaplain serving Minnesota's leaders through prayer and biblical truth.
 ---
 
+<script>
+  /* One of four hero photographs, chosen per visit. Inline and above the hero
+     so the class lands before first paint. Without JS the gradient shows. */
+  document.documentElement.classList.add('hero-' + (1 + Math.floor(Math.random() * 4)));
+</script>
+
 <section class="hero" id="top">
   <div class="wrap">
     <p class="eyebrow">To Increase Him In Us</p>
