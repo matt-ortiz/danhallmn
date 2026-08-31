@@ -108,6 +108,11 @@ collections:
       - name: photos
         label: Gallery photos
         file: _data/gallery.yml
+        # Gallery photos live in their own folder, so point the CMS at it.
+        # Without this the editor can't resolve the existing images and shows
+        # the file path instead of a thumbnail. New uploads land here too.
+        media_folder: /assets/img/gallery
+        public_folder: /assets/img/gallery
         fields:
           - label: Photos
             name: photos
