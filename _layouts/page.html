@@ -1,7 +1,8 @@
 ---
 layout: default
 ---
-<section class="hero hero--compact">
+<section class="hero hero--compact{% if page.header_image %} hero--photo{% endif %}"
+  {%- if page.header_image %} style="--header-photo: url('{{ page.header_image | relative_url }}')"{% endif %}>
   <div class="wrap">
     {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
     <h1>{{ page.title }}</h1>

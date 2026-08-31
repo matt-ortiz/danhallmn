@@ -1,4 +1,5 @@
 ---
+header_image: /assets/img/header/truth-report.jpg
 layout: page
 title: The Truth Report
 eyebrow: Weekly Email

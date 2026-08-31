@@ -1,4 +1,5 @@
 ---
+header_image: /assets/img/header/pastors.jpg
 layout: page
 title: For Pastors
 eyebrow: For Faith Leaders

@@ -1,4 +1,5 @@
 ---
+header_image: /assets/img/header/intercessors.jpg
 layout: page
 title: State Intercessors
 eyebrow: Prayer

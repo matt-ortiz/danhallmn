@@ -1,11 +1,13 @@
 ---
+header_image: /assets/img/header/opinions.jpg
 layout: default
 title: Opinions
 permalink: /opinions/
 description: Thoughts and insights from Dan Hall on Christian, conservative, and biblical topics.
 ---
 
-<section class="hero hero--compact">
+<section class="hero hero--compact{% if page.header_image %} hero--photo{% endif %}"
+  {%- if page.header_image %} style="--header-photo: url('{{ page.header_image | relative_url }}')"{% endif %}>
   <div class="wrap">
     <p class="eyebrow">Opinions</p>
     <h1>Thoughts on the week.</h1>

@@ -1,4 +1,5 @@
 ---
+header_image: /assets/img/header/about.jpg
 layout: page
 title: About Dan
 eyebrow: About

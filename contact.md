@@ -1,4 +1,5 @@
 ---
+header_image: /assets/img/header/contact.jpg
 layout: page
 title: Contact
 eyebrow: Get in Touch

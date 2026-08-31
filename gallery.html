@@ -1,11 +1,13 @@
 ---
+header_image: /assets/img/header/gallery.jpg
 layout: default
 title: Photo Gallery
 permalink: /gallery/
 description: Photos from Dan Hall's ministry — events, gatherings, and the people behind the work.
 ---
 
-<section class="hero hero--compact">
+<section class="hero hero--compact{% if page.header_image %} hero--photo{% endif %}"
+  {%- if page.header_image %} style="--header-photo: url('{{ page.header_image | relative_url }}')"{% endif %}>
   <div class="wrap">
     <p class="eyebrow">Photo Gallery</p>
     <h1>Ministry in motion.</h1>
