@@ -55,6 +55,14 @@ collections:
         format: "YYYY-MM-DD HH:mm:ss ZZ"
         hint: Leave as today unless you're backdating a piece.
 
+      - label: Byline
+        name: author
+        widget: string
+        required: false
+        hint: >-
+          Leave blank for pieces by Dan alone. Fill this in for co-authored
+          pieces, e.g. "Dan and Valerie Hall, Chaplains to Minnesota Politics".
+
       - label: Category
         name: categories
         widget: select
