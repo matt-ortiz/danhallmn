@@ -393,16 +393,20 @@ p:last-child { margin-bottom: 0; }
 @media (min-width: 860px) { .split--reverse > :first-child { order: 2; } }
 
 .portrait {
+  width: 100%;
   aspect-ratio: 4 / 5;
-  background: linear-gradient(150deg, var(--cream-2), #e6dcc8);
+  object-fit: cover;
   border-radius: var(--radius);
-  display: grid;
-  place-items: center;
-  color: var(--muted);
-  text-align: center;
-  padding: 24px;
-  font-size: .85rem;
   border: 1px solid var(--line);
+  background: var(--cream-2);
+}
+/* On the About page the portrait floats beside the opening paragraphs */
+.portrait--about {
+  max-width: 260px;
+  margin: 0 0 20px;
+}
+@media (min-width: 620px) {
+  .portrait--about { float: right; margin: 4px 0 20px 28px; }
 }
 
 /* --- Gallery ------------------------------------------------------------ */

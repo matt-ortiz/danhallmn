@@ -7,6 +7,9 @@ permalink: /about/
 description: Dan Hall is an evangelical minister, former Minnesota Senator, and political chaplain serving the state's leaders through prayer and biblical counsel.
 ---
 
+<img class="portrait portrait--about" src="{{ '/assets/img/portrait/dan-hall.jpg' | relative_url }}"
+     alt="Dan Hall" width="960" height="1200">
+
 Dan Hall is an evangelical minister and former Minnesota Senator with more than
 forty years of experience across ministry, education, and politics. He has spent
 his career in the space where those worlds meet — and he has never treated them
