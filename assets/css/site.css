@@ -925,3 +925,77 @@ body.lightbox-open { overflow: hidden; }
       var(--header-photo);
   }
 }
+
+/* --- Constant Contact inline forms ---------------------------------------
+   CC renders real DOM (not an iframe), so the form can be restyled to match
+   the site. Scoped to .cc-form so nothing here leaks elsewhere. Their footer
+   badge is left alone deliberately — it's their attribution, not decoration.
+   ------------------------------------------------------------------------ */
+.cc-form {
+  background: var(--cream-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 30px 28px 24px;
+  margin: 2em 0;
+}
+.cc-form .ctct-form-defaults { background: none !important; padding: 0 !important; }
+.cc-form .ctct-form-header {
+  font-family: var(--font-display) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: var(--ink) !important;
+  margin: 0 0 .4em !important;
+}
+.cc-form .ctct-form-text {
+  font-family: var(--font-body) !important;
+  font-size: .97rem !important;
+  color: var(--muted) !important;
+  margin: 0 0 1.4em !important;
+}
+.cc-form .ctct-form-field { margin-bottom: 16px !important; }
+.cc-form .ctct-form-label {
+  font-family: var(--font-body) !important;
+  font-size: .82rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .04em !important;
+  color: var(--ink) !important;
+}
+.cc-form .ctct-form-required::before { color: var(--gold) !important; }
+.cc-form .ctct-form-element {
+  font-family: var(--font-body) !important;
+  font-size: 1rem !important;
+  color: var(--body) !important;
+  background: var(--paper) !important;
+  border: 1px solid var(--line) !important;
+  border-radius: var(--radius) !important;
+  padding: .7em .85em !important;
+  height: auto !important;
+  box-shadow: none !important;
+}
+.cc-form .ctct-form-element:focus {
+  border-color: var(--gold) !important;
+  outline: 2px solid var(--gold) !important;
+  outline-offset: 1px !important;
+}
+.cc-form .ctct-form-button {
+  font-family: var(--font-body) !important;
+  font-size: .95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .01em !important;
+  background: var(--gold) !important;
+  border: 0 !important;
+  border-radius: var(--radius) !important;
+  padding: .85em 1.7em !important;
+  width: auto !important;
+  min-width: 190px;
+  transition: background-color .18s ease !important;
+}
+.cc-form .ctct-form-button:hover { background: #a4762f !important; }
+.cc-form .ctct-gdpr-text,
+.cc-form .ctct-form-footer {
+  font-family: var(--font-body) !important;
+  font-size: .72rem !important;
+  line-height: 1.5 !important;
+  color: var(--muted) !important;
+}
+.cc-form .ctct-form-errorMessage { font-family: var(--font-body) !important; }
