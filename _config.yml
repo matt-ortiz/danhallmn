@@ -37,7 +37,7 @@ kindful_url: "https://internationalministerialfellowship-bloom.kindful.com/?camp
 kindful_org: "International Ministerial Fellowship"
 
 # Flip to true once every _includes/cc-*.html embed code is in place.
-forms_ready: false
+forms_ready: true
 
 # --- Opinions --------------------------------------------------------------
 # A collection rather than _posts, so filenames carry no date prefix. That

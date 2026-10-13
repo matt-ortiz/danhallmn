@@ -16,7 +16,10 @@
 {%- assign embed_file = 'cc-' | append: include.list | append: '.html' -%}
 
 {% if site.forms_ready %}
-  {% include {{ embed_file }} %}
+  <div class="cc-form">
+    {% include cc-universal.html %}
+    {% include {{ embed_file }} %}
+  </div>
 {% elsif include.url %}
   <div class="signup-cta">
     <a class="btn btn--gold" href="{{ include.url }}" target="_blank" rel="noopener">
