@@ -17,7 +17,7 @@ lang: en
 # true  = "/" shows the coming-soon placeholder; every real page carries
 #         <meta name="robots" content="noindex"> so nothing gets indexed early.
 # false = launch mode. See README for the two-line flip.
-prelaunch: true
+prelaunch: false
 
 # --- Values used across the site (edit here, not in the HTML) --------------
 contact_email: "danhallmn@gmail.com"

@@ -23,6 +23,3 @@ subjects handled together rather than kept carefully apart.
 - **Articles on politics and religion** — what happened, and what Scripture says about it
 - **State prayer requests** — specific, current, and named
 - **Event updates** — gatherings and opportunities across Minnesota
-
-*[Placeholder — a featured or recent issue could go here, with a link to back
-issues if an archive is available.]*

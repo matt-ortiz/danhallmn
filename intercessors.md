@@ -1,4 +1,5 @@
 ---
+noindex: true   # TODO remove once Dan\'s copy is in
 header_image: /assets/img/header/intercessors.jpg
 layout: page
 title: State Intercessors

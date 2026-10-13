@@ -175,18 +175,21 @@ Everything technical is in place and verified live:
   their `description:` front matter is generic until the copy exists.
 - Alt text comes from gallery captions, so captions matter.
 
-## Launching
+## Launched
 
-1. Fill in the real content and flip `forms_ready: true`.
-2. In `_config.yml`, set `prelaunch: false`. **This is the switch that lets the
-   site be indexed at all** — forget it and Google never sees the site.
-3. Replace the placeholder: delete `index.html`, then in `home.html` change
-   `permalink: /preview/` to `permalink: /` and drop its `noindex`/`sitemap`
-   lines.
-4. Commit and push. Confirm **Enforce HTTPS** is on.
-5. Verify: `curl https://danhallmn.com/robots.txt` should no longer say
-   `Disallow: /`, and pages should say `index, follow`.
-6. Submit the sitemap in Google Search Console.
+The site went live on 2026-10-13. `prelaunch: false`, the coming-soon page is
+gone, and the real home page serves at `/`. `/preview/` redirects to `/` so old
+bookmarks still work.
+
+### Outstanding after launch
+
+- `pastors.md` and `intercessors.md` still carry `[Placeholder]` copy and are
+  marked `noindex: true` so Google does not index unfinished pages. **Remove
+  that line from both once Dan's copy is in** — otherwise they will never rank.
+- Submit the sitemap in Google Search Console: `https://danhallmn.com/sitemap.xml`
+- Constant Contact: the list is named "Love My Faith, Family, & Freedom" in the
+  consent text, and that text publishes a street address rather than the IMF
+  PO box. Both are CC dashboard settings.
 
 ## Local preview
 

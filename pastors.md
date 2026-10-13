@@ -1,4 +1,5 @@
 ---
+noindex: true   # TODO remove once Dan\'s copy is in
 header_image: /assets/img/header/pastors.jpg
 layout: page
 title: For Pastors
