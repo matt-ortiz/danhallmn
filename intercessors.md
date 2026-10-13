@@ -1,5 +1,7 @@
 ---
-noindex: true   # TODO remove once Dan\'s copy is in
+# TODO: delete these two lines once Dan has written this page
+noindex: true
+sitemap: false
 header_image: /assets/img/header/intercessors.jpg
 layout: page
 title: State Intercessors
