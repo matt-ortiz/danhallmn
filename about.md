@@ -21,19 +21,16 @@ pointing back to the two things he believes actually change a state: prayer, and
 a personal relationship with Christ.
 
 Legislating gave him a clear view of how public decisions get made, who carries
-the weight of them, and how few people in that building have anyone praying for
+the weight of them, and how few people in that building have anyone praying with them or for
 them by name.
 
 ## Chaplaincy
 
-Dan's work has reached well beyond the Capitol. He has served as a chaplain to
-metro police departments, and he founded **Midwest Chaplains**, which established
-chaplaincy programs in police and fire departments throughout Minnesota — putting
-trained, steady people alongside first responders in the hardest hours of the job.
+Dan’s work has reached well beyond the Capitol. His chaplaincy experience with metro police departments led him to found **Midwest Chaplains**, which established chaplaincy programs in police and fire departments throughout Minnesota, ensuring trained, steady chaplains stand alongside those who run toward the threat.
 
 ## The Truth Report
 
-He also launched **The Truth Report**, a publication that now engages 10,000
+Dan also launched **The Truth Report**, a publication that now engages 10,000
 people of faith — pastors, ministers, and intercessors across the state — in
 honest conversation at the intersection of faith and politics.
 
@@ -41,17 +38,17 @@ honest conversation at the intersection of faith and politics.
 
 ## Political chaplain
 
-Today Dan serves as a political chaplain and advisor to Minnesota's leaders,
-offering both spiritual guidance and practical wisdom. He is candid about the
-strain politics puts on the people inside it, and he meets that strain the way
-he always has: through service and through prayer.
+Today Dan serves as a political chaplain and advisor to Minnesota’s leaders, offering both spiritual guidance and practical counsel. He understands the strain politics places on those who bear its weight, and he meets that challenge the way he always has: through faithful service and earnest prayer.
 
-He is deeply committed to upholding biblical truth in everyday life, and he
-believes preserving religious freedom is central to America's future.
+Dan is deeply committed to anchoring public life in biblical truth. He believes that preserving religious freedom is not merely a political issue—it is essential to America’s future, and it begins with leaders who understand their calling in light of God’s purpose.
 
 > **"To increase Him in us."**
 >
-> Dan's guiding motto, and the plainest statement of what all of this is for.
+> Dan’s guiding motto. It’s the through-line of his life’s work—from the pulpit to the Capitol to the corridors of power—and the foundation of everything he believes America needs.
+
+**"Guiding Scripture"**
+
+Today Dan’s work is anchored in John 3:30: “He must increase, but I must decrease.” This passage captures the essence of his calling—whether serving as a chaplain, an advisor to leaders, or a voice for faith in the public square. It’s not about Dan; it’s about pointing others toward Christ and inviting them to surrender their lives to His purpose. In politics, in ministry, in the everyday decisions of leadership, Dan believes this principle transforms everything.
 
 ## Reach Dan
 
