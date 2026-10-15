@@ -46,7 +46,7 @@ Dan is deeply committed to anchoring public life in biblical truth. He believes 
 >
 > Dan’s guiding motto. It’s the through-line of his life’s work—from the pulpit to the Capitol to the corridors of power—and the foundation of everything he believes America needs.
 
-**"Guiding Scripture"**
+## Guiding Scripture
 
 Today Dan’s work is anchored in John 3:30: “He must increase, but I must decrease.” This passage captures the essence of his calling—whether serving as a chaplain, an advisor to leaders, or a voice for faith in the public square. It’s not about Dan; it’s about pointing others toward Christ and inviting them to surrender their lives to His purpose. In politics, in ministry, in the everyday decisions of leadership, Dan believes this principle transforms everything.
 
