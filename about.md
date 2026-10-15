@@ -53,6 +53,6 @@ Today Dan’s work is anchored in John 3:30: “He must increase, but I must dec
 ## Reach Dan
 
 Dan can be reached directly at
-**[{{ site.contact_email }}](mailto:{{ site.contact_email }})**
+**(mailto: Dan@DanHallMN.com)**
 or by phone at
 **[{{ site.contact_phone }}](tel:{{ site.contact_phone_link }})**.
