@@ -32,7 +32,7 @@ Dan’s work has reached well beyond the Capitol. His chaplaincy experience with
 
 Dan also launched **The Truth Report**, a publication that now engages 10,000
 people of faith — pastors, ministers, and intercessors across the state — in
-honest conversation at the intersection of faith and politics.
+honest conversations at the intersection of faith and politics.
 
 <p><a class="btn btn--gold" href="{{ '/truth-report/' | relative_url }}">Subscribe to The Truth Report</a></p>
 
