@@ -11,7 +11,7 @@ permalink: /intercessors/
 description: Join the State Intercessors — prayer alerts and focus areas for Minnesota, the nation, and the world.
 ---
 
-*Mission & How to Join
+*Mission & How to Join*
 
 State Intercessors is a network of people of faith—pastors, ministers, and believers across Minnesota—committed to standing in the gap through prayer for our state’s leaders, our nation, and the world.
 
@@ -25,14 +25,14 @@ Prayer requests from Minnesota’s leaders
 Current focus areas for state, national, and world issues
 Encouragement and Scripture for your prayer life
 
-“To increase Him in us”—that’s our guiding motto. When we pray, we invite Christ to increase His influence in our leaders’ hearts and in the decisions that shape our state.*
+“To increase Him in us”—that’s our guiding motto. When we pray, we invite Christ to increase His influence in our leaders’ hearts and in the decisions that shape our state.
 
 ## Current prayer focus
 
 *[Placeholder — current focus areas for state, nation, and world.]*
 
-- **Our state** — *[placeholder]*
-- **Our nation** — *[placeholder]*
-- **The world** — *[placeholder]*
+- **Our state** — *[We are praying for wisdom and courage among Minnesota’s elected officials and appointed leaders to govern with integrity, to defend religious freedom, and to make decisions rooted in biblical truth. We lift up our law enforcement, educators, and business leaders, asking God to guide them toward justice and righteousness.]*
+- **Our nation** — *[We intercede for our nation’s leaders—the President, Congress, Supreme Court, and those in positions of influence—that they would seek God’s counsel and govern with fear of the Lord. We pray for the preservation of religious liberty, the protection of life, and a return to foundational biblical principles in our national discourse.]*
+- **The world** — *[We pray for persecuted Christians around the globe, for leaders in nations hostile to faith, for peace in areas of conflict, and for the advancement of the Gospel. We believe that prayer for the world’s leaders and peoples connects us to God’s global redemptive work.]*
 
 {% include signup-form.html list="intercessors" label="State Intercessors" %}
