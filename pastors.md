@@ -4,14 +4,16 @@ noindex: true
 sitemap: false
 header_image: /assets/img/header/pastors.jpg
 layout: page
-title: For Pastors
+title: For Ministry Leaders
 eyebrow: For Faith Leaders
 lead: Insight and resources for those who shepherd.
 permalink: /pastors/
 description: Resources, encouragement, and messaging for pastors and faith leaders.
 ---
 
-You stand in one of the most important positions in our nation. As a pastor, you shepherd people through their deepest questions—about faith, about right and wrong, about how to live biblically in a culture that increasingly challenges biblical truth. That responsibility is both sacred and lonely.
+## Ministry Leaders
+
+You stand in one of the most important positions in our nation. As a ministry leader, you shepherd people through their deepest questions—about faith, about right and wrong, about how to live biblically in a culture that increasingly challenges biblical truth. That responsibility is both sacred and lonely.
 
 I’ve spent forty years at the intersection of faith and public life—as a minister, a senator, and now as a chaplain to our state’s leaders. I’ve seen what happens when pastors are equipped with both spiritual wisdom and practical insight into the cultural and political currents shaping their congregations. And I’ve seen what happens when they’re not.
 
